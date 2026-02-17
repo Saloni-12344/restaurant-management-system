@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Add New Menu Item</title>
+</head>
+
+<body>
+  <h3>Add New Menu Item</h3>
+
+  <form method="POST" action="/menu">
+    <input name="name" placeholder="Dish name" type="text" required />
+    <br /><br />
+
+    <textarea name="description" placeholder="Dish description"></textarea>
+    <br /><br />
+
+    <input name="image" placeholder="Image URL" type="text" />
+    <br /><br />
+
+    <input name="price" placeholder="Price" type="number" required />
+    <br /><br />
+
+    <input name="category" placeholder="Category (Starters, Drinks...)" type="text" required />
+    <br /><br />
+
+    <button>Add</button>
+  </form>
+</body>
+</html>

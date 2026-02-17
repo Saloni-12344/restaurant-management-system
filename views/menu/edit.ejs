@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Edit Menu Item</title>
+</head>
+
+<body>
+
+  <h3>Edit Menu Item</h3>
+
+  <form method="POST" action="/menu/<%= item._id %>?_method=PUT">
+
+    <input 
+      type="text" 
+      name="name" 
+      value="<%= item.name %>" 
+      required
+    />
+    <br><br>
+
+    <textarea name="description"><%= item.description %></textarea>
+    <br><br>
+
+    <input 
+      type="text" 
+      name="image" 
+      value="<%= item.image %>"
+    />
+    <br><br>
+
+    <input 
+      type="number" 
+      name="price" 
+      value="<%= item.price %>" 
+      required
+    />
+    <br><br>
+
+    <input 
+      type="text" 
+      name="category" 
+      value="<%= item.category %>" 
+      required
+    />
+    <br><br>
+
+    <label>
+      <input 
+        type="checkbox" 
+        name="isVeg" 
+        <%= item.isVeg ? "checked" : "" %>
+      />
+      Veg
+    </label>
+    <br><br>
+
+    <label>Spice Level (1–5)</label>
+    <input 
+      type="number" 
+      name="spiceLevel" 
+      min="1" 
+      max="5" 
+      value="<%= item.spiceLevel %>"
+    />
+    <br><br>
+
+    <label>Prep Time (mins)</label>
+    <input 
+      type="number" 
+      name="prepTime" 
+      value="<%= item.prepTime %>"
+    />
+    <br><br>
+
+    <button>Update</button>
+
+  </form>
+
+  <br>
+  <a href="/menu/<%= item._id %>">⬅ Back</a>
+
+</body>
+</html>

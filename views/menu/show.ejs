@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Menu Item</title>
+</head>
+
+<body>
+
+  <h2><%= item.name %></h2>
+
+  <img src="<%= item.image %>" width="250">
+
+  <p><b>Description:</b> <%= item.description %></p>
+  <p><b>Price:</b> $<%= item.price %></p>
+  <p><b>Category:</b> <%= item.category %></p>
+  <p><b>Veg:</b> <%= item.isVeg ? "Yes 🌱" : "No 🍗" %></p>
+  <p><b>Spice Level:</b> <%= item.spiceLevel %>/5</p>
+  <p><b>Prep Time:</b> <%= item.prepTime || "N/A" %> mins</p>
+
+  <br>
+  <a href="/menu">⬅ Back to menu</a>
+
+  <br><br>
+  <a href="/menu/<%= item._id %>/edit">✏️ Edit</a>
+
+  <br><br>
+
+<form method="POST" action="/menu/<%= item._id %>?_method=DELETE">
+  <button>Delete this Item</button>
+</form>
+
+
+</body>
+</html>
